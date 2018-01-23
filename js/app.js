@@ -1,2 +1,42 @@
 'use strict';
 
+function makeList(location) {
+  // creating the div
+  var newDiv = document.createElement('div');
+  newDiv.setAttribute('id', location);
+  document.body.appendChild(newDiv);
+
+  //creating the header
+  var newHeader = document.createElement('h2');
+  var newHeaderText = document.createTextNode(location.name);
+  newHeader.appendChild(newHeaderText);
+  newDiv.appendChild(newHeader);
+
+  // creating Ul
+  var newList = document.createElement('ul');
+  newDiv.appendChild(newList);
+
+  // creating the li in a for loop to reiterate all the lists in the array
+
+  for (var i = 0; i < 14; i++) {
+    location.hourlySales.push(Math.floor(location.generateRandom()*location.cookiesAvg));
+
+    var newItem = document.createElement('li');
+    var newItemText = document.createTextNode(location.hourlySales[i]);
+    newItem.appendChild(newItemText);
+    // setting position of li to ul
+    newList.appendChild(newItem);
+  }
+}
+
+//first & Pike
+var pike = {
+  name: '1st and Pike',
+  minCust: 23,
+  maxCust: 65,
+  cookiesAvg: 6.3,
+  hourlySales: [],
+  generateRandom: function() {
+    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
+  }
+};
