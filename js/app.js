@@ -3,7 +3,7 @@
 function makeList(location) {
   // creating the div
   var newDiv = document.createElement('div');
-  newDiv.setAttribute('id', location);
+  newDiv.setAttribute('id', location.name);
   document.body.appendChild(newDiv);
 
   //creating the header
@@ -27,6 +27,13 @@ function makeList(location) {
     // setting position of li to ul
     newList.appendChild(newItem);
   }
+  // creating the Total for the day
+  var reducer = (accumulator, currentValue) => accumulator + currentValue;
+  location.total = location.hourlySales.reduce(reducer);
+  var totalEl = document.createElement('li');
+  var totalText = document.createTextNode('Total: ' + location.total);
+  totalEl.appendChild(totalText);
+  newList.appendChild(totalEl);
 }
 
 //first & Pike
@@ -40,3 +47,19 @@ var pike = {
     return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
   }
 };
+
+
+makeList(pike);
+
+var seaTac = {
+  name: 'SeaTac Airport',
+  minCust: 3,
+  maxCust: 24,
+  cookiesAvg: 1.2,
+  hourlySales: [],
+  generateRandom: function() {
+    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
+  }
+};
+
+makeList(seaTac);
