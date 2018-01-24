@@ -1,0 +1,71 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: auto;
+  width: 95%;
+  background-color: rgb(247, 203, 199);
+}
+
+#container {
+  background-color:  rgba(243, 183, 178, 0.493);
+  width: 100%;
+  max-width: 1200px;
+  margin:  2% auto;
+  text-align: center;
+  border-radius: 5px;  
+}
+#heading {
+  display: inline-block;
+}
+
+.salmon {
+  width: 15%;
+  margin: 0 20px;
+}
+#uglySalmonRight {
+  -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+h1 {
+  font-family: 'Bitter', serif;
+  color: rgba(248, 132, 0, 0.699);
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  color: rgb(196, 57, 14);
+  padding: 8px;
+}
+
+div.list {
+  background-color:  rgba(58, 56, 56, 0.099);
+  font-family: 'Roboto', sans-serif;
+  color: rgb(37, 36, 36);
+  margin: 10px 2%;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+#hours {
+  margin-right: 0;
+  background-color:  rgba(243, 183, 178, 0.493);
+}
+
+.total {
+  font-weight: bold;
+}
+
+ul {
+  text-align: left;
+  list-style: none;
+}
+
+li {
+  margin: 12px;
+}

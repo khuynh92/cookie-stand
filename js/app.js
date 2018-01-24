@@ -1,10 +1,15 @@
 'use strict';
 
+
+
 function makeList(location) {
+
   // creating the div
   var newDiv = document.createElement('div');
   newDiv.setAttribute('id', location.name);
-  document.body.appendChild(newDiv);
+  newDiv.className = 'list';
+  container.appendChild(newDiv);
+  document.getElementById(location.name).style.display = 'inline-block';
 
   //creating the header
   var newHeader = document.createElement('h2');
@@ -31,12 +36,13 @@ function makeList(location) {
   var reducer = (accumulator, currentValue) => accumulator + currentValue;
   location.total = location.hourlySales.reduce(reducer);
   var totalEl = document.createElement('li');
-  var totalText = document.createTextNode('Total: ' + location.total);
+  totalEl.className = 'total';
+  var totalText = document.createTextNode(location.total);
   totalEl.appendChild(totalText);
   newList.appendChild(totalEl);
 }
 
-//first & Pike
+//first & Pike object
 var pike = {
   name: '1st and Pike',
   minCust: 23,
@@ -48,10 +54,12 @@ var pike = {
   }
 };
 
-
+//making random list for first & pike
 makeList(pike);
 
+//seaTac Airport object
 var seaTac = {
+  idTag: 'seaTac',
   name: 'SeaTac Airport',
   minCust: 3,
   maxCust: 24,
@@ -62,4 +70,44 @@ var seaTac = {
   }
 };
 
+// making random list for
 makeList(seaTac);
+
+var seattleCenter = {
+  name: 'Seattle Center',
+  minCust: 11,
+  maxCust: 38,
+  cookiesAvg: 3.7,
+  hourlySales: [],
+  generateRandom: function() {
+    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
+  }
+};
+
+makeList(seattleCenter);
+
+var capitolHill = {
+  name: 'Capitol Hill',
+  minCust: 20,
+  maxCust: 38,
+  cookiesAvg: 2.3,
+  hourlySales: [],
+  generateRandom: function() {
+    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
+  }
+};
+
+makeList(capitolHill);
+
+var alki = {
+  name: 'Alki',
+  minCust: 2,
+  maxCust: 16,
+  cookiesAvg: 4.6,
+  hourlySales: [],
+  generateRandom: function() {
+    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
+  }
+};
+
+makeList(alki);
