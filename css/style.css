@@ -3,9 +3,16 @@
 }
 
 body {
+  margin: auto;
   width: 95%;
+  background-color: rgb(247, 203, 199);
 }
+
 
 h1 {
   margin-left: 4%;
+}
+
+h3 {
+  text-align: center;
 }

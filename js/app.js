@@ -1,5 +1,22 @@
 'use strict';
 
+//making list for hours
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+
+for (var i = 0; i < hours.length; i++) {
+  var hoursEl = document.createElement('li');
+  var hoursText = document.createTextNode(hours[i]);
+  hoursEl.appendChild(hoursText);
+  var ul = document.getElementById('hoursList');
+  ul.appendChild(hoursEl);
+}
+
+//creating li for total
+var totalEl = document.createElement('li');
+var totalText = document.createTextNode('Total');
+totalEl.appendChild(totalText);
+totalEl.className = 'total';
+ul.appendChild(totalEl);
 
 
 function makeList(location) {
