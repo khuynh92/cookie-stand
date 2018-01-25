@@ -19,113 +19,63 @@ totalEl.appendChild(totalText);
 totalEl.className = 'total';
 ul.appendChild(totalEl);
 
-function makeList(location) {
+//constructor function
+function Location(idTag, name, minCust, maxCust, cookiesAvg) {
+  this.idTag = idTag;
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.cookiesAvg = cookiesAvg;
+  this.hourlySales = [];
+  this.generateRandom = function() {
+    return Math.floor(Math.random()*(maxCust - minCust + 1)) + minCust;
+  };
 
-  // creating the div
-  var newDiv = document.createElement('div');
-  newDiv.setAttribute('id', location.name);
-  newDiv.className = 'list';
-  var container = document.getElementById('container');
-  container.appendChild(newDiv);
-  document.getElementById(location.name).style.display = 'inline-block';
+  function makeList(location) {
 
-  //creating the header
-  var newHeader = document.createElement('h2');
-  var newHeaderText = document.createTextNode(location.name);
-  newHeader.appendChild(newHeaderText);
-  newDiv.appendChild(newHeader);
+    // creating the div
+    var newDiv = document.createElement('div');
+    newDiv.setAttribute('id', location.idTag);
+    newDiv.className = 'list';
+    var container = document.getElementById('container');
+    container.appendChild(newDiv);
+    document.getElementById(location.idTag).style.display = 'inline-block';
 
-  // creating Ul
-  var newList = document.createElement('ul');
-  newDiv.appendChild(newList);
+    //creating the header
+    var newHeader = document.createElement('h2');
+    var newHeaderText = document.createTextNode(location.name);
+    newHeader.appendChild(newHeaderText);
+    newDiv.appendChild(newHeader);
 
-  // creating the li in a for loop to reiterate all the lists in the array
+    // creating Ul
+    var newList = document.createElement('ul');
+    newDiv.appendChild(newList);
 
-  for (var i = 0; i < 13; i++) {
-    location.hourlySales.push(Math.floor(location.generateRandom()*location.cookiesAvg));
+    // creating the li in a for loop to reiterate all the lists in the array
 
-    var newItem = document.createElement('li');
-    var newItemText = document.createTextNode(location.hourlySales[i]);
-    newItem.appendChild(newItemText);
-    // setting position of li to ul
-    newList.appendChild(newItem);
+    for (var i = 0; i < 13; i++) {
+      location.hourlySales.push(Math.floor(location.generateRandom()*location.cookiesAvg));
+
+      var newItem = document.createElement('li');
+      var newItemText = document.createTextNode(location.hourlySales[i]);
+      newItem.appendChild(newItemText);
+      // setting position of li to ul
+      newList.appendChild(newItem);
+    }
+    // creating the Total for the day
+    var reducer = (accumulator, currentValue) => accumulator + currentValue;
+    location.total = location.hourlySales.reduce(reducer);
+    var totalEl = document.createElement('li');
+    totalEl.className = 'total';
+    var totalText = document.createTextNode(location.total);
+    totalEl.appendChild(totalText);
+    newList.appendChild(totalEl);
   }
-  // creating the Total for the day
-  var reducer = (accumulator, currentValue) => accumulator + currentValue;
-  location.total = location.hourlySales.reduce(reducer);
-  var totalEl = document.createElement('li');
-  totalEl.className = 'total';
-  var totalText = document.createTextNode(location.total);
-  totalEl.appendChild(totalText);
-  newList.appendChild(totalEl);
+  makeList(this);
 }
 
-//first & Pike object
-var pike = {
-  name: '1st and Pike',
-  minCust: 23,
-  maxCust: 65,
-  cookiesAvg: 6.3,
-  hourlySales: [],
-  generateRandom: function() {
-    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
-  }
-};
-
-//making random list for first & pike
-makeList(pike);
-
-//seaTac Airport object
-var seaTac = {
-  idTag: 'seaTac',
-  name: 'SeaTac Airport',
-  minCust: 3,
-  maxCust: 24,
-  cookiesAvg: 1.2,
-  hourlySales: [],
-  generateRandom: function() {
-    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
-  }
-};
-
-// making random list for
-makeList(seaTac);
-
-var seattleCenter = {
-  name: 'Seattle Center',
-  minCust: 11,
-  maxCust: 38,
-  cookiesAvg: 3.7,
-  hourlySales: [],
-  generateRandom: function() {
-    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
-  }
-};
-
-makeList(seattleCenter);
-
-var capitolHill = {
-  name: 'Capitol Hill',
-  minCust: 20,
-  maxCust: 38,
-  cookiesAvg: 2.3,
-  hourlySales: [],
-  generateRandom: function() {
-    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
-  }
-};
-
-makeList(capitolHill);
-
-var alki = {
-  name: 'Alki',
-  minCust: 2,
-  maxCust: 16,
-  cookiesAvg: 4.6,
-  hourlySales: [],
-  generateRandom: function() {
-    return Math.floor(Math.random()*(this.maxCust - this.minCust + 1)) + this.minCust;
-  }
-};
-
-makeList(alki);
+var pike = new Location('pike','first & pike', 23, 65, 6,3);
+var seaTac = new Location('seaTac', 'SeaTac Airport', 3, 24, 1.2);
+var seattleCenter = new Location('seattleCenter', 'Seattle Center', 11, 38, 3.7);
+var capitolHill = new Location('capitolHill', 'Capitol Hill', 20, 38, 2.3);
+var alki = new Location ('alki', 'Alki', 2, 16, 4.6);
