@@ -1,10 +1,11 @@
 'use strict';
 
 //making list for hours
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 for (var i = 0; i < hours.length; i++) {
   var hoursEl = document.createElement('li');
+  hoursEl.className = 'hoursLi';
   var hoursText = document.createTextNode(hours[i]);
   hoursEl.appendChild(hoursText);
   var ul = document.getElementById('hoursList');
@@ -17,7 +18,6 @@ var totalText = document.createTextNode('Total');
 totalEl.appendChild(totalText);
 totalEl.className = 'total';
 ul.appendChild(totalEl);
-
 
 function makeList(location) {
 
@@ -41,7 +41,7 @@ function makeList(location) {
 
   // creating the li in a for loop to reiterate all the lists in the array
 
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < 13; i++) {
     location.hourlySales.push(Math.floor(location.generateRandom()*location.cookiesAvg));
 
     var newItem = document.createElement('li');

@@ -56,12 +56,7 @@ div.list {
   display: inline-block;
 }
 
-#hours {
-  margin-right: 0;
-  background-color:  rgba(243, 184, 178, 0);
-  color: rgb(196, 57, 14);
-  font-weight: bold;
-}
+
 
 .total {
   color: rgb(37, 36, 36);
@@ -76,6 +71,18 @@ ul {
 
 li {
   margin: 12px;
+}
+
+#hours {
+  margin-right: 0;
+  background-color:  rgba(243, 184, 178, 0);
+  color: rgb(196, 57, 14);
+  font-weight: bold;
+}
+
+.hoursLi {
+  margin-top: 9.5px;
+  margin-bottom: 0px;
 }
 
 h4 {
