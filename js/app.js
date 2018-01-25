@@ -8,6 +8,7 @@ function makeList(location) {
   var newDiv = document.createElement('div');
   newDiv.setAttribute('id', location.name);
   newDiv.className = 'list';
+  var container = document.getElementById('container');
   container.appendChild(newDiv);
   document.getElementById(location.name).style.display = 'inline-block';
 
