@@ -4,23 +4,27 @@
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 for (var i = 0; i < hours.length; i++) {
-  var hoursEl = document.createElement('li');
-  hoursEl.className = 'hoursLi';
-  var hoursText = document.createTextNode(hours[i]);
-  hoursEl.appendChild(hoursText);
-  var ul = document.getElementById('hoursList');
-  ul.appendChild(hoursEl);
+  var trEl = document.createElement('tr');
+  trEl.setAttribute('id', hours[i]);
+  var tbodyEl = document.getElementById('table');
+  tbodyEl.appendChild(trEl);
+
+  var thEl = document.createElement('th');
+  var thText = document.createTextNode(hours[i]);
+  thEl.appendChild(thText);
+  trEl.appendChild(thEl);
+  thEl.className = 'hours';
 }
 
-//creating li for total
-var totalEl = document.createElement('li');
+//total td
+var totalEl = document.createElement('td');
 var totalText = document.createTextNode('Total');
 totalEl.appendChild(totalText);
-totalEl.className = 'total';
-ul.appendChild(totalEl);
+var tfooterEl = document.getElementById('total');
+tfooterEl.appendChild(totalEl);
 
 //constructor function
-function Location(idTag, name, minCust, maxCust, cookiesAvg) {
+function Stand(idTag, name, minCust, maxCust, cookiesAvg) {
   this.idTag = idTag;
   this.name = name;
   this.minCust = minCust;
@@ -31,51 +35,49 @@ function Location(idTag, name, minCust, maxCust, cookiesAvg) {
     return Math.floor(Math.random()*(maxCust - minCust + 1)) + minCust;
   };
 
-  function makeList(location) {
-
-    // creating the div
-    var newDiv = document.createElement('div');
-    newDiv.setAttribute('id', location.idTag);
-    newDiv.className = 'list';
-    var container = document.getElementById('container');
-    container.appendChild(newDiv);
-    document.getElementById(location.idTag).style.display = 'inline-block';
+  function makeTable(location) {
 
     //creating the header
-    var newHeader = document.createElement('h2');
-    var newHeaderText = document.createTextNode(location.name);
-    newHeader.appendChild(newHeaderText);
-    newDiv.appendChild(newHeader);
+    var thEl = document.createElement('th');
+    var thText = document.createTextNode(location.name);
+    thEl.appendChild(thText);
+    var tHead = document.getElementById('tableHead');
+    tHead.appendChild(thEl);
+    thEl.className = 'topRow';
 
-    // creating Ul
-    var newList = document.createElement('ul');
-    newDiv.appendChild(newList);
-
-    // creating the li in a for loop to reiterate all the lists in the array
-
-    for (var i = 0; i < 13; i++) {
+    //pushing data into table data
+    for (var i = 0; i < hours.length; i++) {
       location.hourlySales.push(Math.floor(location.generateRandom()*location.cookiesAvg));
 
-      var newItem = document.createElement('li');
-      var newItemText = document.createTextNode(location.hourlySales[i]);
-      newItem.appendChild(newItemText);
-      // setting position of li to ul
-      newList.appendChild(newItem);
+      var tdEl = document.createElement('td');
+      var tdText = document.createTextNode(location.hourlySales[i]);
+      tdEl.appendChild(tdText);
+      var trEl = document.getElementById(hours[i]);
+      trEl.appendChild(tdEl);
     }
-    // creating the Total for the day
+
+    //total for the day
     var reducer = (accumulator, currentValue) => accumulator + currentValue;
     location.total = location.hourlySales.reduce(reducer);
-    var totalEl = document.createElement('li');
-    totalEl.className = 'total';
+    //storing total in table
+    var totalEl = document.createElement('td');
     var totalText = document.createTextNode(location.total);
     totalEl.appendChild(totalText);
-    newList.appendChild(totalEl);
+    var tfooterEl = document.getElementById('total');
+    tfooterEl.appendChild(totalEl);
+
   }
-  makeList(this);
+
+  makeTable(this);
 }
 
-var pike = new Location('pike','first & pike', 23, 65, 6,3);
-var seaTac = new Location('seaTac', 'SeaTac Airport', 3, 24, 1.2);
-var seattleCenter = new Location('seattleCenter', 'Seattle Center', 11, 38, 3.7);
-var capitolHill = new Location('capitolHill', 'Capitol Hill', 20, 38, 2.3);
-var alki = new Location ('alki', 'Alki', 2, 16, 4.6);
+// calling all functions
+function create() {
+  var pike = new Stand('pike','first & pike', 23, 65, 6,3);
+  var seaTac = new Stand('seaTac', 'SeaTac Airport', 3, 24, 1.2);
+  var seattleCenter = new Stand('seattleCenter', 'Seattle Center', 11, 38, 3.7);
+  var capitolHill = new Stand('capitolHill', 'Capitol Hill', 20, 38, 2.3);
+  var alki = new Stand('alki', 'Alki', 2, 16, 4.6);
+}
+
+create();

@@ -1,7 +1,20 @@
 *{
   font-family: 'Roboto', sans-serif;
 }
+td, th {
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 5px;
+}
 
+table {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(37, 36, 36);
+  margin: 2% auto;
+  background-color:  rgba(58, 56, 56, 0.068);
+  border-radius: 5px;
+  border-spacing: 25px 5px;
+}
 body {
   margin: auto;
   width: 95%;
@@ -28,10 +41,12 @@ body {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 #uglySalmonRight {
   -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
+
 h1 {
   font-family: 'Bitter', serif;
   color: rgba(248, 132, 0, 0.699);
@@ -40,25 +55,13 @@ h1 {
   text-align: center;
 }
 
-h2 {
+.topRow {
   font-family: 'Roboto Slab', serif;
   color: rgb(196, 57, 14);
   padding: 8px;
 }
 
-div.list {
-  background-color:  rgba(58, 56, 56, 0.099);
-  font-family: 'Roboto', sans-serif;
-  color: rgb(37, 36, 36);
-  margin: 10px 2%;
-  text-align: center;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-
-
-.total {
+tfoot {
   color: rgb(37, 36, 36);
   font-weight: bold;
 }
@@ -73,7 +76,7 @@ li {
   margin: 12px;
 }
 
-#hours {
+.hours {
   margin-right: 0;
   background-color:  rgba(243, 184, 178, 0);
   color: rgb(196, 57, 14);
