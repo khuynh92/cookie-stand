@@ -1,10 +1,35 @@
 *{
   font-family: 'Roboto', sans-serif;
 }
-td, th {
+
+body {
+  margin: auto;
+  width: 95%;
+  background-color: rgb(247, 203, 199);
+}
+
+#navBar {
+  margin: auto;
+  width: 75%;
+  text-align: center;
+  border-radius: 5px;  
+  background-color: rgba(243, 213, 210, 0.493);
+  border: 1px solid rgba(247, 179, 173, 0.493);
+  box-shadow: 7px 7px 10px rgba(245, 166, 159, 0.493);
+}
+
+th {
   border: 1px solid black;
   margin: 2px;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+td {
+  margin: 2px;
+  border: 0.75px solid  rgba(58, 56, 56, 0.384);
   border-radius: 5px;
+  color:  rgba(58, 56, 56, 0.973);
 }
 
 table {
@@ -14,11 +39,6 @@ table {
   background-color:  rgba(58, 56, 56, 0.068);
   border-radius: 5px;
   border-spacing: 25px 5px;
-}
-body {
-  margin: auto;
-  width: 95%;
-  background-color: rgb(247, 203, 199);
 }
 
 #container {
@@ -63,17 +83,8 @@ h1 {
 
 tfoot {
   color: rgb(37, 36, 36);
-  font-weight: bold;
-}
-
-ul {
-  margin: auto;
-  padding: 5px;
-  list-style: none;
-}
-
-li {
-  margin: 12px;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .hours {
@@ -83,11 +94,20 @@ li {
   font-weight: bold;
 }
 
-.hoursLi {
-  margin-top: 9.5px;
-  margin-bottom: 0px;
-}
-
 h4 {
   text-align: center;
+}
+
+a:Link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+a:hover {
+  text-shadow: 1px 1px 1px;
+  color: rgb(48, 47, 47);
+}
 }

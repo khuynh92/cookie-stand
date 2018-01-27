@@ -16,7 +16,7 @@ for (var i = 0; i < hours.length; i++) {
   thEl.className = 'hours';
 }
 
-//total td
+//total td, created as a footer
 var totalEl = document.createElement('td');
 var totalText = document.createTextNode('Total');
 totalEl.appendChild(totalText);
@@ -48,7 +48,6 @@ function Stand(idTag, name, minCust, maxCust, cookiesAvg) {
     //pushing data into table data
     for (var i = 0; i < hours.length; i++) {
       location.hourlySales.push(Math.floor(location.generateRandom()*location.cookiesAvg));
-
       var tdEl = document.createElement('td');
       var tdText = document.createTextNode(location.hourlySales[i]);
       tdEl.appendChild(tdText);
@@ -57,9 +56,12 @@ function Stand(idTag, name, minCust, maxCust, cookiesAvg) {
     }
 
     //total for the day
-    var reducer = (accumulator, currentValue) => accumulator + currentValue;
-    location.total = location.hourlySales.reduce(reducer);
-    //storing total in table
+    function sum(total, num) {
+      return total + num;
+    }
+    location.total = location.hourlySales.reduce(sum);
+
+    //storing total in the footer
     var totalEl = document.createElement('td');
     var totalText = document.createTextNode(location.total);
     totalEl.appendChild(totalText);
