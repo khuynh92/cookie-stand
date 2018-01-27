@@ -20,6 +20,10 @@ body {
   margin-bottom: 20px;
 }
 
+#bigSalmon {
+  display: block;
+  margin: auto;
+}
 .salmon {
   width: 15%;
   margin-left: 10px;
