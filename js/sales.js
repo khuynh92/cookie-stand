@@ -73,16 +73,13 @@ function Stand(idTag, name, minCust, maxCust, cookiesAvg) {
   makeTable(this);
 }
 
-// calling all functions
-function create() {
-  var pike = new Stand('pike','first & pike', 23, 65, 6.3);
-  var seaTac = new Stand('seaTac', 'SeaTac Airport', 3, 24, 1.2);
-  var seattleCenter = new Stand('seattleCenter', 'Seattle Center', 11, 38, 3.7);
-  var capitolHill = new Stand('capitolHill', 'Capitol Hill', 20, 38, 2.3);
-  var alki = new Stand('alki', 'Alki', 2, 16, 4.6);
-}
 
-create();
+new Stand('pike','first & pike', 23, 65, 6.3);
+new Stand('seaTac', 'SeaTac Airport', 3, 24, 1.2);
+new Stand('seattleCenter', 'Seattle Center', 11, 38, 3.7);
+new Stand('capitolHill', 'Capitol Hill', 20, 38, 2.3);
+new Stand('alki', 'Alki', 2, 16, 4.6);
+
 
 var newStore = document.getElementById('newStore');
 
@@ -95,13 +92,13 @@ function newStoreHandler(event) {
   }
 
   var storeName = event.target.storeName.value;
-  var minCust = event.target.minCust.value;
-  var maxCust = event.target.maxCust.value;
+  var minCust = parseInt(event.target.minCust.value);
+  var maxCust = parseInt(event.target.maxCust.value);
   var cookiesAvg = event.target.cookiesAvg.value;
-  var idTag = 'newStore';
+  var idTag = storeName;
   console.log(minCust, maxCust, storeName, cookiesAvg);
 
-  var newStand = new Stand(idTag, storeName, minCust, maxCust, cookiesAvg);
+  new Stand(idTag, storeName, minCust, maxCust, cookiesAvg);
 
   event.target.storeName.value = null;
   event.target.minCust.value = null;
