@@ -106,8 +106,17 @@ a:Link {
 a:visited {
   color: black;
 }
+
 a:hover {
   text-shadow: 1px 1px 1px;
   color: rgb(48, 47, 47);
 }
+
+button {
+  margin: 10px;
+  float: right;
 }
+
+
+
+

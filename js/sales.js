@@ -83,3 +83,30 @@ function create() {
 }
 
 create();
+
+var newStore = document.getElementById('newStore');
+
+function newStoreHandler(event) {
+  console.log(event);
+  event.preventDefault();
+
+  if (!event.target.storeName.value || !event.target.minCust.value || !event.target.maxCust.value || !event.target.cookiesAvg.value) {
+    return alert('Fields cannot be empty!');
+  }
+
+  var storeName = event.target.storeName.value;
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var cookiesAvg = event.target.maxCust.value;
+
+  var newStand = new Stand(storeName, minCust, maxCust, cookiesAvg);
+
+  event.target.storeName.value = null;
+  event.target.minCust.value = null;
+  event.target.maxCust.value = null;
+  event.target.cookiesAvg.value = null;
+}
+
+newStore.addEventListener('submit', newStoreHandler, false);
+
+
