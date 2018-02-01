@@ -74,7 +74,7 @@ function Stand(idTag, name, minCust, maxCust, cookiesAvg) {
 }
 
 
-new Stand('pike','first & pike', 23, 65, 6.3);
+var pike = new Stand('pike','first & pike', 23, 65, 6.3);
 new Stand('seaTac', 'SeaTac Airport', 3, 24, 1.2);
 new Stand('seattleCenter', 'Seattle Center', 11, 38, 3.7);
 new Stand('capitolHill', 'Capitol Hill', 20, 38, 2.3);
@@ -96,7 +96,7 @@ function newStoreHandler(event) {
   var maxCust = parseInt(event.target.maxCust.value);
   var cookiesAvg = event.target.cookiesAvg.value;
   var idTag = storeName;
-  console.log(minCust, maxCust, storeName, cookiesAvg);
+  console.log(storeName, minCust, maxCust, cookiesAvg);
 
   new Stand(idTag, storeName, minCust, maxCust, cookiesAvg);
 
