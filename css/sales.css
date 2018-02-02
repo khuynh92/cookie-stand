@@ -142,7 +142,9 @@ form button {
 
 input:focus {
   background-color: lightyellow;
+  display: block;
 }
+
 
 
 
