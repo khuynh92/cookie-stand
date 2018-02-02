@@ -20,15 +20,12 @@ body {
 
 th {
   border: 1px solid black;
-  margin: 2px;
-  border-radius: 2px;
   padding: 5px;
 }
 
 td {
   margin: 2px;
   border: 0.75px solid  rgba(58, 56, 56, 0.384);
-  border-radius: 5px;
   color:  rgba(58, 56, 56, 0.973);
 }
 
@@ -37,8 +34,8 @@ table {
   color: rgb(37, 36, 36);
   margin: 2% auto;
   background-color:  rgba(58, 56, 56, 0.068);
-  border-radius: 5px;
-  border-spacing: 25px 5px;
+  border-radius: 0px;
+  border-spacing: 0px 0px;
 }
 
 #container {
@@ -87,6 +84,10 @@ tfoot {
   font-size: 20px;
 }
 
+#total td {
+  border-top-color: black;
+}
+
 .hours {
   margin-right: 0;
   background-color:  rgba(243, 184, 178, 0);
@@ -112,10 +113,37 @@ a:hover {
   color: rgb(48, 47, 47);
 }
 
-button {
-  margin: 10px;
+form legend {
+  font-size: 22px;
+  text-align: center;
+}
+
+form {  
+  margin: 50px auto;
+  width: 35%;
+}
+
+form div {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+form input {
   float: right;
 }
+
+
+form button {
+  margin: 10px 20px 10px 10px;
+  float: right;
+  clear: right;
+}
+
+input:focus {
+  background-color: lightyellow;
+}
+
 
 
 
