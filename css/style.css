@@ -163,39 +163,11 @@ textarea {
 }
 
 .storeRow {
-  width: 100%;
-  margin: auto;
+  width: 960px;
 }
 
-.storeImageRow img {
-width: 15%;
-margin: 1% 18.3% 0% 0%;
-}
-
-.storeImageRow :first-child {
-  margin-left: 9.15%;
-}
-
-.storeImageRow :last-child {
-  margin-right: 0%;
-}
-
-.storeTextRow p {
-  width: 15%;
-  margin: 1% 18.3% 0% 0%;
+.firstItem, .secondItem, .thirdItem {
   display: inline-block;
-}
-
-.storeTextRow :first-child {
-  margin-left: 9.15%;
-}
-
-.storeTextRow :last-child {
-  margin-right: 0%;
-}
-
-.storeTextRow span {
-  padding-left: 55%;
 }
 
 #contactUs {

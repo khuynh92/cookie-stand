@@ -2,6 +2,7 @@
 
 //making list for hours
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var hourlyTotalsArray = [];
 
 for (var i = 0; i < hours.length; i++) {
   var trEl = document.createElement('tr');
@@ -17,7 +18,7 @@ for (var i = 0; i < hours.length; i++) {
 }
 
 //total td, created as a footer
-var totalEl = document.createElement('td');
+var totalEl = document.createElement('th');
 var totalText = document.createTextNode('Total');
 totalEl.appendChild(totalText);
 var tfooterEl = document.getElementById('total');
@@ -74,11 +75,45 @@ function Stand(idTag, name, minCust, maxCust, cookiesAvg) {
 }
 
 
-new Stand('pike','first & pike', 23, 65, 6.3);
-new Stand('seaTac', 'SeaTac Airport', 3, 24, 1.2);
-new Stand('seattleCenter', 'Seattle Center', 11, 38, 3.7);
-new Stand('capitolHill', 'Capitol Hill', 20, 38, 2.3);
-new Stand('alki', 'Alki', 2, 16, 4.6);
+var pike = new Stand('pike','first & pike', 23, 65, 6.3);
+var seaTac = new Stand('seaTac', 'SeaTac Airport', 3, 24, 1.2);
+var seattleCenter = new Stand('seattleCenter', 'Seattle Center', 11, 38, 3.7);
+var capitolHill = new Stand('capitolHill', 'Capitol Hill', 20, 38, 2.3);
+var alki = new Stand('alki', 'Alki', 2, 16, 4.6);
+
+
+//create totals for the hours
+var tableHead = document.getElementById('tableHead');
+var hoursTotal = document.createElement('th');
+hoursTotal.textContent = 'Total';
+tableHead.appendChild(hoursTotal);
+
+for (var k = 0; k < hours.length; k++) {
+  var hourlyTotals = pike.hourlySales[k] + seaTac.hourlySales[k] + seattleCenter.hourlySales[k] + capitolHill.hourlySales[k] + alki.hourlySales[k];
+  hourlyTotalsArray.push(hourlyTotals);
+}
+
+
+for (var l = 0; l < hours.length; l++) {
+  var trTotalEl = document.getElementById(hours[l]);
+  var totalTd = document.createElement('td');
+  totalTd.textContent = hourlyTotalsArray[l];
+  trTotalEl.appendChild(totalTd);
+}
+
+//creating totaltotal
+
+var totalTotal = 0;
+for (var m = 0; m < hourlyTotalsArray.length; m++) {
+  totalTotal += hourlyTotalsArray[m];
+}
+
+var totalTotalEl = document.createElement('td');
+totalTotalEl.textContent = totalTotal;
+tfooterEl.appendChild(totalTotalEl);
+
+
+
 
 
 var newStore = document.getElementById('newStore');
@@ -107,5 +142,7 @@ function newStoreHandler(event) {
 }
 
 newStore.addEventListener('submit', newStoreHandler, false);
+
+
 
 
