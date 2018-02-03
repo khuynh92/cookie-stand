@@ -84,8 +84,8 @@ tfoot {
   font-size: 20px;
 }
 
-#total td {
-  border-top-color: black;
+.total {
+  font-weight: bold;
 }
 
 .hours {
