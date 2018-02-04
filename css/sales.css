@@ -18,6 +18,10 @@ body {
   box-shadow: 7px 7px 10px rgba(245, 166, 159, 0.493);
 }
 
+td:hover {
+  background-color:  rgba(240, 204, 200, 0.493);
+
+}
 th {
   border: 1px solid black;
   padding: 5px;

@@ -117,8 +117,6 @@ function makeTotal(){
 }
 makeTotal();
 
-var newStore = document.getElementById('newStore');
-
 function newStoreHandler(event) {
   console.log(event);
   event.preventDefault();
@@ -147,6 +145,7 @@ function newStoreHandler(event) {
 
   new Stand(idTag, storeName, minCust, maxCust, cookiesAvg);
 
+  //remake totals with
   makeTotal();
 
   event.target.storeName.value = null;
