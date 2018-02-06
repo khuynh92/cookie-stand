@@ -117,6 +117,8 @@ function makeTotal(){
 }
 makeTotal();
 
+var newStore = document.getElementById('newStore');
+
 function newStoreHandler(event) {
   console.log(event);
   event.preventDefault();
