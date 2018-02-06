@@ -18,6 +18,8 @@ function testimonialsHandler(event) {
   newPEl.textContent = userComment;
   newDivEl.appendChild(newPEl);
   testimonialsPageEl.appendChild(newDivEl);
+
+  event.target.userComment.value = null;
 }
 
 newTestimonial.addEventListener('submit', testimonialsHandler, false);
