@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sales</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sales.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Roboto|Roboto+Slab" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="heading">
+      <h1><img src="../images/salmon.png" alt="picture of an ugly salmon"  class="salmon" id="uglySalmonLeft" />Sales<img src="../images/salmon.png" alt="picture of an ugly salmon" class="salmon" id="uglySalmonRight" /></h1>
+    </div>
+    <form id="newStore">
+      <fieldset>
+        <legend>New Store</legend>
+        <div>
+        <label for="storeName">New Store Name:</label>
+        <input name="storeName" type="text" />
+        </div>
+        <div>
+        <label for="minCust">Minimum Customers per Hour:</label>
+        <input name="minCust" type="text" />
+        </div>
+        <div>
+        <label for="maxCust">Maximum Customers per Hour:</label>
+        <input name="maxCust" type="text" />
+        </div>
+        <div>
+        <label for="cookiesAvg">Average Cookies per Sale:</label>
+        <input name="cookiesAvg" type="text" />
+        </div>
+        <button type="submit">Create</button>
+      </fieldset>
+    </form>
+    <div id="container">
+      <table>
+        <thead>
+          <tr id="tableHead">
+            <th class="hours">Hours</th>
+          </tr>
+        </thead>
+        <tbody id="table"></tbody>
+        <tfoot id="tfoot">
+          <tr id="totalRow"></tr>
+        </tfoot>
+      </table>
+    </div>
+    <h4 id="return"><a href="../index.html">Return Home</a></h4>
+    <script src="../js/sales.js"></script>
+  </body>
+</html>

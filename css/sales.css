@@ -1,0 +1,159 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: auto;
+  width: 95%;
+  background-color: rgb(247, 203, 199);
+}
+
+#navBar {
+  margin: auto;
+  width: 75%;
+  text-align: center;
+  border-radius: 5px;  
+  background-color: rgba(243, 213, 210, 0.493);
+  border: 1px solid rgba(247, 179, 173, 0.493);
+  box-shadow: 7px 7px 10px rgba(245, 166, 159, 0.493);
+}
+
+td:hover {
+  background-color:  rgba(240, 204, 200, 0.493);
+
+}
+th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+td {
+  margin: 2px;
+  border: 0.75px solid  rgba(58, 56, 56, 0.384);
+  color:  rgba(58, 56, 56, 0.973);
+}
+
+table {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(37, 36, 36);
+  margin: 2% auto;
+  background-color:  rgba(58, 56, 56, 0.068);
+  border-radius: 0px;
+  border-spacing: 0px 0px;
+}
+
+#container {
+  background-color:  rgba(243, 183, 178, 0.493);
+  width: 100%;
+  max-width: 1200px;
+  margin:  2% auto;
+  text-align: center;
+  border-radius: 5px;  
+  border: 1px solid rgba(247, 179, 173, 0.493);
+  box-shadow: 5px 5px 10px rgba(245, 166, 159, 0.493);
+}
+#heading {
+  margin: auto;
+  display: inline-block;
+}
+
+.salmon {
+  width: 15%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#uglySalmonRight {
+  -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  color: rgba(248, 132, 0, 0.699);
+  margin: 2% auto;
+  width: 100%;
+  text-align: center;
+}
+
+.topRow {
+  font-family: 'Roboto Slab', serif;
+  color: rgb(196, 57, 14);
+  padding: 8px;
+}
+
+tfoot {
+  color: rgb(37, 36, 36);
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.hours {
+  margin-right: 0;
+  background-color:  rgba(243, 184, 178, 0);
+  color: rgb(196, 57, 14);
+  font-weight: bold;
+}
+
+#return {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+a:Link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  text-shadow: 1px 1px 1px;
+  color: rgb(48, 47, 47);
+}
+
+form legend {
+  font-size: 22px;
+  text-align: center;
+}
+
+form {  
+  margin: 50px auto;
+  width: 40%;
+}
+
+form div {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+form input {
+  float: right;
+}
+
+
+form button {
+  margin: 10px 20px 10px 10px;
+  float: right;
+  clear: right;
+}
+
+input:focus {
+  background-color: lightyellow;
+  display: block;
+}
+
+
+
+
+
+
+

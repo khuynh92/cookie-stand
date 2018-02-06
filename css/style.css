@@ -1,0 +1,214 @@
+
+
+*{
+  font-family: 'Roboto Slab', serif;
+}
+
+body {
+  margin: auto;
+  width: 95%;
+  background-color: rgb(247, 203, 199);
+}
+
+.box {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;  
+  background-color: rgba(247, 179, 173, 0.493);
+  border: 1px solid rgba(247, 179, 173, 0.493);
+  box-shadow: 7px 7px 10px rgba(245, 166, 159, 0.493);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#bigSalmon {
+  display: block;
+  margin: auto;
+}
+.salmon {
+  width: 15%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#uglySalmonRight {
+  -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+iframe {
+  width: 400px;
+  height: 300px;
+  margin: 2% auto;
+  text-align: center;
+}
+
+#navBar {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;  
+  background-color: rgba(243, 213, 210, 0.493);
+  border: 1px solid rgba(247, 179, 173, 0.493);
+  box-shadow: 7px 7px 10px rgba(245, 166, 159, 0.493);
+
+}
+li {
+  display: inline-block;
+  padding: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+h1 {
+  color: rgba(248, 132, 0, 0.699);
+  margin: 2% auto;
+  text-align: center;
+  font-size: 48px;
+}
+
+h4 {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+h5 {
+  margin-top: 0px;
+}
+
+a:Link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+a:hover {
+  text-shadow: 1px 1px 1px;
+  color: rgb(48, 47, 47);
+  transition: 300ms;
+}
+
+.quote {
+  width: 50%;
+  padding: 20px;
+  margin: 20px auto;
+  font-style: italic;
+  background-color: salmon;
+  text-align: left;
+}
+
+#ourStory {
+  width: 75%;
+  margin: auto;
+  text-align: left;
+  overflow: auto;
+}
+
+#ourStory img {
+  width: 300px;
+  float: left;
+}
+
+#ourStory p, #ourStory h2 {
+  width: 60%;
+  float: left;
+  margin: 2%;
+}
+
+#whoWeAre {
+  margin: 4% auto;
+  text-align: center;
+}
+
+#whoWeAre img {
+  width: 300px;
+}
+
+#whoWeAre p, #whoWeAre h2 {
+  margin: 2% auto;
+}
+
+#rowOne, #rowTwo {
+  width: 30%;
+  display: inline-block;
+}
+
+.store {
+  width: 40%
+}
+
+.store h2 {
+  margin: 2%;
+}
+textarea {
+  margin: 4% auto;
+}
+
+#testimonials {
+  padding: 2%;
+}
+
+#userCommentButton {
+  margin-bottom: 20px;
+}
+
+#userInput {
+  overflow: auto;
+}
+
+#userInput :first-child {
+  margin-top: 2%;
+}
+
+#return {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.storeRow {
+  width: 960px;
+  margin: 5% auto;
+}
+
+.firstItem:hover, .secondItem:hover, .thirdItem:hover {
+  border: solid 2px rgba(128, 128, 128, 0.37);
+}
+
+.storeRow img {
+  width: 300px;
+  height: 300px;
+}
+.firstItem, .secondItem, .thirdItem {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.thirdItem {
+  margin-right: 0px;
+}
+
+.storeRow p {
+  text-align: center;
+  margin-top: 4%;
+  font-weight: bold;
+  padding-bottom: 2%;
+}
+
+.storeRow span {
+  font-weight: normal;
+  padding-left: 40px;
+}
+#contactUs {
+  width: 30%;
+  padding: 4%;
+}
+
+#contactUs h5 {
+  margin-bottom: 4%;
+}
